@@ -1,0 +1,88 @@
+entity Egitim {
+    id Long,
+    egitimBaslik String ,
+    egitimAltBaslik String,
+    egitimBaslamaTarihi LocalDate ,
+    egitimBitisTarihi LocalDate ,
+    dersSayisi Integer,
+    egitimSuresi Float ,
+    egitimYeri String,
+    egitimPuani Float,
+    aktif Boolean,
+}
+entity EgitimTuru {
+adi String,
+aciklama String
+}
+
+entity Kurum {
+adi String,
+aciklama String
+}
+entity Egitmen{
+id Long,
+adiSoyadi String,
+unvani String,
+puani Float
+}
+
+entity OgrenciEgitimler {
+
+}
+
+entity TumEgitimler {
+   id Long,
+    egitimBaslik String ,
+    egitimAltBaslik String,
+    egitimBaslamaTarihi LocalDate ,
+    egitimBitisTarihi LocalDate ,
+    dersSayisi Integer,
+    egitimSuresi Float ,
+    egitimYeri String,
+    egitimPuani Float,
+    kayit Boolean,
+}
+entity Duyuru {
+	duyuruBaslik String required,
+    duyuruIcerik String required,
+    duyuruBaslamaTarihi LocalDate required,
+    duyuruBitisTarihi LocalDate required,
+}
+entity Ders {
+adi String
+aciklama TextBlob,
+dersLinki String,
+dersVideosu AnyBlob 
+}
+entity EgitimDersler {
+
+}
+entity Takvim {
+adi String
+}
+entity ApplicationUser {
+  birimi String
+}
+
+relationship OneToOne {
+  ApplicationUser{internalUser} to User
+}
+
+relationship ManyToOne {
+    Duyuru{egitim(egitimBaslik)} to Egitim
+    Egitim{kurum(adi)} to Kurum,
+    Egitim{egitimTuru(adi)} to EgitimTuru,
+    Egitim {egitmen(adiSoyadi)} to Egitmen,
+    Takvim {egitim(egitimBaslik)} to Egitim,
+    OgrenciEgitimler {egitim(egitimBaslik)} to Egitim,
+    OgrenciEgitimler {kullanici(id)} to ApplicationUser,
+    EgitimDersler{egitim(egitimBaslik)} to Egitim,
+    EgitimDersler{kullanici(id)} to ApplicationUser
+}
+relationship OneToMany {
+ApplicationUser {egitim(egitimBaslik)} to Egitim,
+Egitim {ders(adi)} to Ders,
+}
+service all with serviceImpl
+paginate all with pagination
+  
