@@ -1,0 +1,30 @@
+{
+  "name": "EgitimDersler",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "egitim",
+      "otherEntityRelationshipName": "egitimDersler",
+      "relationshipName": "egitim",
+      "otherEntityField": "egitimBaslik"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "applicationUser",
+      "otherEntityRelationshipName": "egitimDersler",
+      "relationshipName": "kullanici",
+      "otherEntityField": "id"
+    }
+  ],
+  "entityTableName": "egitim_dersler",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211127174825"
+}

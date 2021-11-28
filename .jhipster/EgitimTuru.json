@@ -1,0 +1,24 @@
+{
+  "name": "EgitimTuru",
+  "fields": [
+    {
+      "fieldName": "adi",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "aciklama",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "egitim_turu",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211127174818"
+}

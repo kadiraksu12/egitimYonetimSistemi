@@ -42,6 +42,138 @@
           </span>
         </a>
         <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu">
+          <li>
+            <a
+              class="dropdown-item"
+              routerLink="egitim"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="collapseNavbar()"
+            >
+              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+              <span jhiTranslate="global.menu.entities.egitim">Egitim</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              routerLink="egitim-turu"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="collapseNavbar()"
+            >
+              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+              <span jhiTranslate="global.menu.entities.egitimTuru">Egitim Turu</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              routerLink="kurum"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="collapseNavbar()"
+            >
+              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+              <span jhiTranslate="global.menu.entities.kurum">Kurum</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              routerLink="egitmen"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="collapseNavbar()"
+            >
+              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+              <span jhiTranslate="global.menu.entities.egitmen">Egitmen</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              routerLink="ogrenci-egitimler"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="collapseNavbar()"
+            >
+              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+              <span jhiTranslate="global.menu.entities.ogrenciEgitimler">Ogrenci Egitimler</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              routerLink="tum-egitimler"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="collapseNavbar()"
+            >
+              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+              <span jhiTranslate="global.menu.entities.tumEgitimler">Tum Egitimler</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              routerLink="duyuru"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="collapseNavbar()"
+            >
+              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+              <span jhiTranslate="global.menu.entities.duyuru">Duyuru</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              routerLink="ders"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="collapseNavbar()"
+            >
+              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+              <span jhiTranslate="global.menu.entities.ders">Ders</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              routerLink="egitim-dersler"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="collapseNavbar()"
+            >
+              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+              <span jhiTranslate="global.menu.entities.egitimDersler">Egitim Dersler</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              routerLink="takvim"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="collapseNavbar()"
+            >
+              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+              <span jhiTranslate="global.menu.entities.takvim">Takvim</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              routerLink="application-user"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="collapseNavbar()"
+            >
+              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+              <span jhiTranslate="global.menu.entities.applicationUser">Application User</span>
+            </a>
+          </li>
           <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
         </ul>
       </li>

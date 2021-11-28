@@ -1,0 +1,25 @@
+{
+  "egitimkadirApp": {
+    "egitimDersler": {
+      "home": {
+        "title": "Egitim Dersler",
+        "refreshListLabel": "Listeyi Yenile",
+        "createLabel": "Create a new Egitim Dersler",
+        "createOrEditLabel": "Create or edit a Egitim Dersler",
+        "notFound": "No Egitim Derslers found"
+      },
+      "created": "A new Egitim Dersler is created with identifier {{ param }}",
+      "updated": "A Egitim Dersler is updated with identifier {{ param }}",
+      "deleted": "A Egitim Dersler is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Egitim Dersler {{ id }}?"
+      },
+      "detail": {
+        "title": "Egitim Dersler"
+      },
+      "id": "ID",
+      "egitim": "Egitim",
+      "kullanici": "Kullanici"
+    }
+  }
+}

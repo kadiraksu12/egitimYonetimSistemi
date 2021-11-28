@@ -1,0 +1,44 @@
+{
+  "name": "Duyuru",
+  "fields": [
+    {
+      "fieldName": "duyuruBaslik",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "duyuruIcerik",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "duyuruBaslamaTarihi",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "duyuruBitisTarihi",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "egitim",
+      "otherEntityRelationshipName": "duyuru",
+      "relationshipName": "egitim",
+      "otherEntityField": "egitimBaslik"
+    }
+  ],
+  "entityTableName": "duyuru",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211127174823"
+}

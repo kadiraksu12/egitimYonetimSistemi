@@ -1,0 +1,185 @@
+<div>
+  <h2 id="page-heading" data-cy="EgitimHeading">
+    <span jhiTranslate="egitimkadirApp.egitim.home.title">Egitims</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="egitimkadirApp.egitim.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-egitim"
+        [routerLink]="['/egitim/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="egitimkadirApp.egitim.home.createLabel"> Create a new Egitim </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="egitims?.length === 0">
+    <span jhiTranslate="egitimkadirApp.egitim.home.notFound">No egitims found</span>
+  </div>
+  <div *jhiHasAnyAuthority="'ROLE_ADMIN'">
+    <div class="table-responsive" id="entities" *ngIf="egitims && egitims.length > 0">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
+            <th scope="col" jhiSortBy="id"><span jhiTranslate="egitimkadirApp.egitim.id">Id</span> <fa-icon icon="sort"></fa-icon></th>
+            <th scope="col" jhiSortBy="egitimBaslik">
+              <span jhiTranslate="egitimkadirApp.egitim.egitimBaslik">Egitim Baslik</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="egitimAltBaslik">
+              <span jhiTranslate="egitimkadirApp.egitim.egitimAltBaslik">Egitim Alt Baslik</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="egitimBaslamaTarihi">
+              <span jhiTranslate="egitimkadirApp.egitim.egitimBaslamaTarihi">Egitim Baslama Tarihi</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="egitimBitisTarihi">
+              <span jhiTranslate="egitimkadirApp.egitim.egitimBitisTarihi">Egitim Bitis Tarihi</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="dersSayisi">
+              <span jhiTranslate="egitimkadirApp.egitim.dersSayisi">Ders Sayisi</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="egitimSuresi">
+              <span jhiTranslate="egitimkadirApp.egitim.egitimSuresi">Egitim Suresi</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="egitimYeri">
+              <span jhiTranslate="egitimkadirApp.egitim.egitimYeri">Egitim Yeri</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="egitimPuani">
+              <span jhiTranslate="egitimkadirApp.egitim.egitimPuani">Egitim Puani</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="aktif">
+              <span jhiTranslate="egitimkadirApp.egitim.aktif">Aktif</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="kurum.adi">
+              <span jhiTranslate="egitimkadirApp.egitim.kurum">Kurum</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="egitimTuru.adi">
+              <span jhiTranslate="egitimkadirApp.egitim.egitimTuru">Egitim Turu</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="egitmen.adiSoyadi">
+              <span jhiTranslate="egitimkadirApp.egitim.egitmen">Egitmen</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let egitim of egitims; trackBy: trackId" data-cy="entityTable">
+            <td>
+              <a [routerLink]="['/egitim', egitim.id, 'view']">{{ egitim.id }}</a>
+            </td>
+            <td>{{ egitim.egitimBaslik }}</td>
+            <td>{{ egitim.egitimAltBaslik }}</td>
+            <td>{{ egitim.egitimBaslamaTarihi | formatMediumDate }}</td>
+            <td>{{ egitim.egitimBitisTarihi | formatMediumDate }}</td>
+            <td>{{ egitim.dersSayisi }}</td>
+            <td>{{ egitim.egitimSuresi }}</td>
+            <td>{{ egitim.egitimYeri }}</td>
+            <td>{{ egitim.egitimPuani }}</td>
+            <td>{{ egitim.aktif }}</td>
+            <td>
+              <div *ngIf="egitim.kurum">
+                <a [routerLink]="['/kurum', egitim.kurum?.id, 'view']">{{ egitim.kurum?.adi }}</a>
+              </div>
+            </td>
+            <td>
+              <div *ngIf="egitim.egitimTuru">
+                <a [routerLink]="['/egitim-turu', egitim.egitimTuru?.id, 'view']">{{ egitim.egitimTuru?.adi }}</a>
+              </div>
+            </td>
+            <td>
+              <div *ngIf="egitim.egitmen">
+                <a [routerLink]="['/egitmen', egitim.egitmen?.id, 'view']">{{ egitim.egitmen?.adiSoyadi }}</a>
+              </div>
+            </td>
+            <td class="text-right">
+              <div class="btn-group">
+                <button
+                  type="submit"
+                  [routerLink]="['/egitim', egitim.id, 'view']"
+                  class="btn btn-info btn-sm"
+                  data-cy="entityDetailsButton"
+                >
+                  <fa-icon icon="eye"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                </button>
+
+                <button
+                  type="submit"
+                  [routerLink]="['/egitim', egitim.id, 'edit']"
+                  class="btn btn-primary btn-sm"
+                  data-cy="entityEditButton"
+                >
+                  <fa-icon icon="pencil-alt"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                </button>
+
+                <button type="submit" (click)="delete(egitim)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                  <fa-icon icon="times"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="row" *jhiHasAnyAuthority="'ROLE_USER'">
+  <div class="lkcard col-10">
+    <div class="d-flex flex-wrap" *ngIf="value1 === 'off'">
+      <div *ngFor="let item of egitims; index as ind" class="card m-3" style="width: 300px; background-color: lightgray">
+        <div class="card-body">
+          <h5 class="card-title">
+            <b>{{ item.egitimBaslik }} </b>
+          </h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            <b> {{ item.egitimAltBaslik }}</b>
+          </h6>
+          <p class="card-text"><b>Egitim Türü:</b> {{ item.egitimTuru }}</p>
+          <p class="card-text"><b>Egitmen:</b> {{ item.egitmen?.adiSoyadi }}</p>
+
+          <p style="font-size: 13px">
+            Eğitim Tarihleri: {{ item.egitimBaslamaTarihi | formatMediumDate }} - {{ item.egitimBitisTarihi | formatMediumDate }}
+          </p>
+          <p class="card-text" *ngIf="item.ders">
+            <b>Ders İçerikleri:</b>
+          </p>
+          <p *ngFor="let ders2 of item?.ders" class="card-text">
+            <a *ngIf="ders2.dersVideosu" target="_blank" (click)="openFile(ders2.dersVideosu, ders2.dersVideosuContentType)">{{
+              ders2?.adi
+            }}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="egitims && egitims.length > 0">
+  <div class="row justify-content-center">
+    <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+  </div>
+
+  <div class="row justify-content-center">
+    <ngb-pagination
+      [collectionSize]="totalItems"
+      [(page)]="ngbPaginationPage"
+      [pageSize]="itemsPerPage"
+      [maxSize]="5"
+      [rotate]="true"
+      [boundaryLinks]="true"
+      (pageChange)="loadPage($event)"
+    ></ngb-pagination>
+  </div>
+</div>

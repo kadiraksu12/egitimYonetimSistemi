@@ -1,13 +1,13 @@
 {
   "home": {
-    "title": "Merhaba, Java Hipster!",
-    "subtitle": "Burası Ana Sayfanız",
+    "title": "Merhaba !",
+    "subtitle": " Ana Sayfa",
     "logged": {
       "message": "\"{{username}}\" olarak giriş yaptınız."
     },
-    "question": "JHipster hakkında sorularınız için:",
+    "question": "---",
     "link": {
-      "homepage": "JHipster ana sayfa",
+      "homepage": " Ana sayfa",
       "stackoverflow": "Stack Overflow'da JHipster",
       "bugtracker": "JHipster hata yönetimi",
       "chat": "JHipster genel sohbet odası",

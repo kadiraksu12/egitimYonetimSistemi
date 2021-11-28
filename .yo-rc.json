@@ -42,6 +42,20 @@
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
     "languages": ["tr"],
-    "enableGradleEnterprise": false
+    "enableGradleEnterprise": false,
+    "entities": [
+      "Egitim",
+      "EgitimTuru",
+      "Kurum",
+      "Egitmen",
+      "OgrenciEgitimler",
+      "TumEgitimler",
+      "Duyuru",
+      "Ders",
+      "EgitimDersler",
+      "Takvim",
+      "ApplicationUser"
+    ],
+    "lastLiquibaseTimestamp": 1638035307000
   }
 }

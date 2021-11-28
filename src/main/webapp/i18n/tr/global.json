@@ -7,6 +7,17 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Varlıklar",
+        "egitim": "Egitim",
+        "egitimTuru": "Egitim Turu",
+        "kurum": "Kurum",
+        "egitmen": "Egitmen",
+        "ogrenciEgitimler": "Ogrenci Egitimler",
+        "tumEgitimler": "Tum Egitimler",
+        "duyuru": "Duyuru",
+        "ders": "Ders",
+        "egitimDersler": "Egitim Dersler",
+        "takvim": "Takvim",
+        "applicationUser": "Application User",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -89,8 +100,8 @@
   },
   "entity": {
     "action": {
-      "addblob": "Add blob",
-      "addimage": "Resim Ekle",
+      "addblob": "Video Ekle",
+      "addimage": "Video Ekle",
       "back": "Geri",
       "cancel": "İptal",
       "delete": "Sil",

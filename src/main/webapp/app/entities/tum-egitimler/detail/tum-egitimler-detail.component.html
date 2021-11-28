@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="tumEgitimler">
+      <h2 data-cy="tumEgitimlerDetailsHeading"><span jhiTranslate="egitimkadirApp.tumEgitimler.detail.title">Tum Egitimler</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="egitimkadirApp.tumEgitimler.id">Id</span></dt>
+        <dd>
+          <span>{{ tumEgitimler.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="egitimkadirApp.tumEgitimler.egitimBaslik">Egitim Baslik</span></dt>
+        <dd>
+          <span>{{ tumEgitimler.egitimBaslik }}</span>
+        </dd>
+        <dt><span jhiTranslate="egitimkadirApp.tumEgitimler.egitimAltBaslik">Egitim Alt Baslik</span></dt>
+        <dd>
+          <span>{{ tumEgitimler.egitimAltBaslik }}</span>
+        </dd>
+        <dt><span jhiTranslate="egitimkadirApp.tumEgitimler.egitimBaslamaTarihi">Egitim Baslama Tarihi</span></dt>
+        <dd>
+          <span>{{ tumEgitimler.egitimBaslamaTarihi | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="egitimkadirApp.tumEgitimler.egitimBitisTarihi">Egitim Bitis Tarihi</span></dt>
+        <dd>
+          <span>{{ tumEgitimler.egitimBitisTarihi | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="egitimkadirApp.tumEgitimler.dersSayisi">Ders Sayisi</span></dt>
+        <dd>
+          <span>{{ tumEgitimler.dersSayisi }}</span>
+        </dd>
+        <dt><span jhiTranslate="egitimkadirApp.tumEgitimler.egitimSuresi">Egitim Suresi</span></dt>
+        <dd>
+          <span>{{ tumEgitimler.egitimSuresi }}</span>
+        </dd>
+        <dt><span jhiTranslate="egitimkadirApp.tumEgitimler.egitimYeri">Egitim Yeri</span></dt>
+        <dd>
+          <span>{{ tumEgitimler.egitimYeri }}</span>
+        </dd>
+        <dt><span jhiTranslate="egitimkadirApp.tumEgitimler.egitimPuani">Egitim Puani</span></dt>
+        <dd>
+          <span>{{ tumEgitimler.egitimPuani }}</span>
+        </dd>
+        <dt><span jhiTranslate="egitimkadirApp.tumEgitimler.kayit">Kayit</span></dt>
+        <dd>
+          <span>{{ tumEgitimler.kayit }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/tum-egitimler', tumEgitimler.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

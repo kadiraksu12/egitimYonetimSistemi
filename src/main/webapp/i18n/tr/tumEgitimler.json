@@ -1,0 +1,32 @@
+{
+  "egitimkadirApp": {
+    "tumEgitimler": {
+      "home": {
+        "title": "Tum Egitimler",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Tum Egitimler",
+        "createOrEditLabel": "Create or edit a Tum Egitimler",
+        "notFound": "No Tum Egitimlers found"
+      },
+      "created": "A new Tum Egitimler is created with identifier {{ param }}",
+      "updated": "A Tum Egitimler is updated with identifier {{ param }}",
+      "deleted": "A Tum Egitimler is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tum Egitimler {{ id }}?"
+      },
+      "detail": {
+        "title": "Tum Egitimler"
+      },
+      "id": "Id",
+      "egitimBaslik": "Egitim Baslik",
+      "egitimAltBaslik": "Egitim Alt Baslik",
+      "egitimBaslamaTarihi": "Egitim Baslama Tarihi",
+      "egitimBitisTarihi": "Egitim Bitis Tarihi",
+      "dersSayisi": "Ders Sayisi",
+      "egitimSuresi": "Egitim Suresi",
+      "egitimYeri": "Egitim Yeri",
+      "egitimPuani": "Egitim Puani",
+      "kayit": "Kayit"
+    }
+  }
+}

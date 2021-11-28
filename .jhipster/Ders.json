@@ -1,0 +1,41 @@
+{
+  "name": "Ders",
+  "fields": [
+    {
+      "fieldName": "adi",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "aciklama",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "dersLinki",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dersVideosu",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "egitim",
+      "otherEntityRelationshipName": "ders",
+      "relationshipName": "egitim"
+    }
+  ],
+  "entityTableName": "ders",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211127174824"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "TumEgitimler",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "egitimBaslik",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "egitimAltBaslik",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "egitimBaslamaTarihi",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "egitimBitisTarihi",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dersSayisi",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "egitimSuresi",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "egitimYeri",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "egitimPuani",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "kayit",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "tum_egitimler",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211127174822"
+}

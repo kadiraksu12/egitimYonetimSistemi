@@ -48,6 +48,19 @@ public class CacheConfiguration {
             createCache(cm, com.yesevi.egitimkadir.domain.User.class.getName());
             createCache(cm, com.yesevi.egitimkadir.domain.Authority.class.getName());
             createCache(cm, com.yesevi.egitimkadir.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.yesevi.egitimkadir.domain.Egitim.class.getName());
+            createCache(cm, com.yesevi.egitimkadir.domain.Egitim.class.getName() + ".ders");
+            createCache(cm, com.yesevi.egitimkadir.domain.EgitimTuru.class.getName());
+            createCache(cm, com.yesevi.egitimkadir.domain.Kurum.class.getName());
+            createCache(cm, com.yesevi.egitimkadir.domain.Egitmen.class.getName());
+            createCache(cm, com.yesevi.egitimkadir.domain.OgrenciEgitimler.class.getName());
+            createCache(cm, com.yesevi.egitimkadir.domain.TumEgitimler.class.getName());
+            createCache(cm, com.yesevi.egitimkadir.domain.Duyuru.class.getName());
+            createCache(cm, com.yesevi.egitimkadir.domain.Ders.class.getName());
+            createCache(cm, com.yesevi.egitimkadir.domain.EgitimDersler.class.getName());
+            createCache(cm, com.yesevi.egitimkadir.domain.Takvim.class.getName());
+            createCache(cm, com.yesevi.egitimkadir.domain.ApplicationUser.class.getName());
+            createCache(cm, com.yesevi.egitimkadir.domain.ApplicationUser.class.getName() + ".egitims");
             // jhipster-needle-ehcache-add-entry
         };
     }

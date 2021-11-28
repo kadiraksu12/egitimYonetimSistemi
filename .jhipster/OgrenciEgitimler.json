@@ -1,0 +1,30 @@
+{
+  "name": "OgrenciEgitimler",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "egitim",
+      "otherEntityRelationshipName": "ogrenciEgitimler",
+      "relationshipName": "egitim",
+      "otherEntityField": "egitimBaslik"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "applicationUser",
+      "otherEntityRelationshipName": "ogrenciEgitimler",
+      "relationshipName": "kullanici",
+      "otherEntityField": "id"
+    }
+  ],
+  "entityTableName": "ogrenci_egitimler",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211127174821"
+}

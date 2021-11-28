@@ -1,0 +1,35 @@
+{
+  "name": "ApplicationUser",
+  "fields": [
+    {
+      "fieldName": "birimi",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "applicationUser",
+      "relationshipName": "internalUser",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "egitim",
+      "otherEntityRelationshipName": "applicationUser",
+      "relationshipName": "egitim",
+      "otherEntityField": "egitimBaslik"
+    }
+  ],
+  "entityTableName": "application_user",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211127174827"
+}

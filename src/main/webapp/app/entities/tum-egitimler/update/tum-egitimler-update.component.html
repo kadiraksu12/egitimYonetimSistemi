@@ -1,0 +1,169 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-tum-egitimler-heading"
+        data-cy="TumEgitimlerCreateUpdateHeading"
+        jhiTranslate="egitimkadirApp.tumEgitimler.home.createOrEditLabel"
+      >
+        Create or edit a Tum Egitimler
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="egitimkadirApp.tumEgitimler.id" for="field_id">Id</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="egitimkadirApp.tumEgitimler.egitimBaslik" for="field_egitimBaslik"
+            >Egitim Baslik</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="egitimBaslik"
+            id="field_egitimBaslik"
+            data-cy="egitimBaslik"
+            formControlName="egitimBaslik"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="egitimkadirApp.tumEgitimler.egitimAltBaslik" for="field_egitimAltBaslik"
+            >Egitim Alt Baslik</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="egitimAltBaslik"
+            id="field_egitimAltBaslik"
+            data-cy="egitimAltBaslik"
+            formControlName="egitimAltBaslik"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="egitimkadirApp.tumEgitimler.egitimBaslamaTarihi" for="field_egitimBaslamaTarihi"
+            >Egitim Baslama Tarihi</label
+          >
+          <div class="input-group">
+            <input
+              id="field_egitimBaslamaTarihi"
+              data-cy="egitimBaslamaTarihi"
+              type="text"
+              class="form-control"
+              name="egitimBaslamaTarihi"
+              ngbDatepicker
+              #egitimBaslamaTarihiDp="ngbDatepicker"
+              formControlName="egitimBaslamaTarihi"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="egitimBaslamaTarihiDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="egitimkadirApp.tumEgitimler.egitimBitisTarihi" for="field_egitimBitisTarihi"
+            >Egitim Bitis Tarihi</label
+          >
+          <div class="input-group">
+            <input
+              id="field_egitimBitisTarihi"
+              data-cy="egitimBitisTarihi"
+              type="text"
+              class="form-control"
+              name="egitimBitisTarihi"
+              ngbDatepicker
+              #egitimBitisTarihiDp="ngbDatepicker"
+              formControlName="egitimBitisTarihi"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="egitimBitisTarihiDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="egitimkadirApp.tumEgitimler.dersSayisi" for="field_dersSayisi">Ders Sayisi</label>
+          <input
+            type="number"
+            class="form-control"
+            name="dersSayisi"
+            id="field_dersSayisi"
+            data-cy="dersSayisi"
+            formControlName="dersSayisi"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="egitimkadirApp.tumEgitimler.egitimSuresi" for="field_egitimSuresi"
+            >Egitim Suresi</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="egitimSuresi"
+            id="field_egitimSuresi"
+            data-cy="egitimSuresi"
+            formControlName="egitimSuresi"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="egitimkadirApp.tumEgitimler.egitimYeri" for="field_egitimYeri">Egitim Yeri</label>
+          <input
+            type="text"
+            class="form-control"
+            name="egitimYeri"
+            id="field_egitimYeri"
+            data-cy="egitimYeri"
+            formControlName="egitimYeri"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="egitimkadirApp.tumEgitimler.egitimPuani" for="field_egitimPuani"
+            >Egitim Puani</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="egitimPuani"
+            id="field_egitimPuani"
+            data-cy="egitimPuani"
+            formControlName="egitimPuani"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="egitimkadirApp.tumEgitimler.kayit" for="field_kayit">Kayit</label>
+          <input type="checkbox" class="form-check" name="kayit" id="field_kayit" data-cy="kayit" formControlName="kayit" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

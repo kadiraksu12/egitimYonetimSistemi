@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="egitmen">
+      <h2 data-cy="egitmenDetailsHeading"><span jhiTranslate="egitimkadirApp.egitmen.detail.title">Egitmen</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="egitimkadirApp.egitmen.id">Id</span></dt>
+        <dd>
+          <span>{{ egitmen.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="egitimkadirApp.egitmen.adiSoyadi">Adi Soyadi</span></dt>
+        <dd>
+          <span>{{ egitmen.adiSoyadi }}</span>
+        </dd>
+        <dt><span jhiTranslate="egitimkadirApp.egitmen.unvani">Unvani</span></dt>
+        <dd>
+          <span>{{ egitmen.unvani }}</span>
+        </dd>
+        <dt><span jhiTranslate="egitimkadirApp.egitmen.puani">Puani</span></dt>
+        <dd>
+          <span>{{ egitmen.puani }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/egitmen', egitmen.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

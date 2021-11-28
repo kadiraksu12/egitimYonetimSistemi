@@ -1,0 +1,25 @@
+{
+  "egitimkadirApp": {
+    "kurum": {
+      "home": {
+        "title": "Kurumlar",
+        "refreshListLabel": "Listeyi Yenile",
+        "createLabel": "Yeni Kurum Ekle",
+        "createOrEditLabel": "Create or edit a Kurum",
+        "notFound": "Kurum Bulunamadı"
+      },
+      "created": "A new Kurum is created with identifier {{ param }}",
+      "updated": "A Kurum is updated with identifier {{ param }}",
+      "deleted": "A Kurum is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Kurum {{ id }}?"
+      },
+      "detail": {
+        "title": "Kurum"
+      },
+      "id": "ID",
+      "adi": "Adi",
+      "aciklama": "Aciklama"
+    }
+  }
+}

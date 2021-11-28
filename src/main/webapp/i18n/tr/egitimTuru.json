@@ -1,0 +1,25 @@
+{
+  "egitimkadirApp": {
+    "egitimTuru": {
+      "home": {
+        "title": "Egitim Türleri",
+        "refreshListLabel": "Listeyi Yenile",
+        "createLabel": "Egitim Türü Ekle",
+        "createOrEditLabel": "Create or edit a Egitim Turu",
+        "notFound": "No Egitim Turus found"
+      },
+      "created": "A new Egitim Turu is created with identifier {{ param }}",
+      "updated": "A Egitim Turu is updated with identifier {{ param }}",
+      "deleted": "A Egitim Turu is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Egitim Turu {{ id }}?"
+      },
+      "detail": {
+        "title": "Egitim Turu"
+      },
+      "id": "ID",
+      "adi": "Adi",
+      "aciklama": "Aciklama"
+    }
+  }
+}

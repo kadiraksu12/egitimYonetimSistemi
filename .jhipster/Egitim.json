@@ -1,0 +1,91 @@
+{
+  "name": "Egitim",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "egitimBaslik",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "egitimAltBaslik",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "egitimBaslamaTarihi",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "egitimBitisTarihi",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dersSayisi",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "egitimSuresi",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "egitimYeri",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "egitimPuani",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "aktif",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ders",
+      "otherEntityRelationshipName": "egitim",
+      "relationshipName": "ders",
+      "otherEntityField": "adi"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "kurum",
+      "otherEntityRelationshipName": "egitim",
+      "relationshipName": "kurum",
+      "otherEntityField": "adi"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "egitimTuru",
+      "otherEntityRelationshipName": "egitim",
+      "relationshipName": "egitimTuru",
+      "otherEntityField": "adi"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "egitmen",
+      "otherEntityRelationshipName": "egitim",
+      "relationshipName": "egitmen",
+      "otherEntityField": "adiSoyadi"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "applicationUser",
+      "otherEntityRelationshipName": "egitim",
+      "relationshipName": "applicationUser"
+    }
+  ],
+  "entityTableName": "egitim",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211127174817"
+}
