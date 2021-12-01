@@ -56,6 +56,9 @@
       "Takvim",
       "ApplicationUser"
     ],
-    "lastLiquibaseTimestamp": 1638035307000
+    "lastLiquibaseTimestamp": 1638035307000,
+    "herokuAppName": "egitimkadir",
+    "herokuDeployType": "git",
+    "herokuJavaVersion": "11"
   }
 }
