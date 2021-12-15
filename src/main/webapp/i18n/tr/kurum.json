@@ -8,7 +8,7 @@
         "createOrEditLabel": "Create or edit a Kurum",
         "notFound": "Kurum Bulunamadı"
       },
-      "created": "A new Kurum is created with identifier {{ param }}",
+      "created": "KURUM YARATILDI",
       "updated": "A Kurum is updated with identifier {{ param }}",
       "deleted": "A Kurum is deleted with identifier {{ param }}",
       "delete": {

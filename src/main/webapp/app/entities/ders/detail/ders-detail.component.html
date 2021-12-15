@@ -36,7 +36,7 @@
         <dt><span jhiTranslate="egitimkadirApp.ders.egitim">Egitim</span></dt>
         <dd>
           <div *ngIf="ders.egitim">
-            <a [routerLink]="['/egitim', ders.egitim?.id, 'view']">{{ ders.egitim?.id }}</a>
+            <a [routerLink]="['/egitim', ders.egitim?.id, 'view']">{{ ders.egitim?.egitimBaslik }}</a>
           </div>
         </dd>
       </dl>

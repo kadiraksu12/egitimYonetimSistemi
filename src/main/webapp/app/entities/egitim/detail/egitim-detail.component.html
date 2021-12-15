@@ -30,10 +30,6 @@
         <dd>
           <span>{{ egitim.egitimBitisTarihi | formatMediumDate }}</span>
         </dd>
-        <dt><span jhiTranslate="egitimkadirApp.egitim.dersSayisi">Ders Sayisi</span></dt>
-        <dd>
-          <span>{{ egitim.dersSayisi }}</span>
-        </dd>
         <dt><span jhiTranslate="egitimkadirApp.egitim.egitimSuresi">Egitim Suresi</span></dt>
         <dd>
           <span>{{ egitim.egitimSuresi }}</span>
@@ -41,10 +37,6 @@
         <dt><span jhiTranslate="egitimkadirApp.egitim.egitimYeri">Egitim Yeri</span></dt>
         <dd>
           <span>{{ egitim.egitimYeri }}</span>
-        </dd>
-        <dt><span jhiTranslate="egitimkadirApp.egitim.egitimPuani">Egitim Puani</span></dt>
-        <dd>
-          <span>{{ egitim.egitimPuani }}</span>
         </dd>
         <dt><span jhiTranslate="egitimkadirApp.egitim.aktif">Aktif</span></dt>
         <dd>
@@ -66,12 +58,6 @@
         <dd>
           <div *ngIf="egitim.egitmen">
             <a [routerLink]="['/egitmen', egitim.egitmen?.id, 'view']">{{ egitim.egitmen?.adiSoyadi }}</a>
-          </div>
-        </dd>
-        <dt><span jhiTranslate="egitimkadirApp.egitim.applicationUser">Application User</span></dt>
-        <dd>
-          <div *ngIf="egitim.applicationUser">
-            <a [routerLink]="['/application-user', egitim.applicationUser?.id, 'view']">{{ egitim.applicationUser?.id }}</a>
           </div>
         </dd>
       </dl>

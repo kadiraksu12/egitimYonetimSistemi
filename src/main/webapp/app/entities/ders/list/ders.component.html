@@ -40,9 +40,6 @@
           <th scope="col" jhiSortBy="dersLinki">
             <span jhiTranslate="egitimkadirApp.ders.dersLinki">Ders Linki</span> <fa-icon icon="sort"></fa-icon>
           </th>
-          <th scope="col" jhiSortBy="dersVideosu">
-            <span jhiTranslate="egitimkadirApp.ders.dersVideosu">Ders Videosu</span> <fa-icon icon="sort"></fa-icon>
-          </th>
           <th scope="col" jhiSortBy="egitim.id">
             <span jhiTranslate="egitimkadirApp.ders.egitim">Egitim</span> <fa-icon icon="sort"></fa-icon>
           </th>
@@ -58,14 +55,8 @@
           <td>{{ ders.aciklama }}</td>
           <td>{{ ders.dersLinki }}</td>
           <td>
-            <a *ngIf="ders.dersVideosu" (click)="openFile(ders.dersVideosu, ders.dersVideosuContentType)" jhiTranslate="entity.action.open"
-              >open</a
-            >
-            <span *ngIf="ders.dersVideosu">{{ ders.dersVideosuContentType }}, {{ byteSize(ders.dersVideosu) }}</span>
-          </td>
-          <td>
             <div *ngIf="ders.egitim">
-              <a [routerLink]="['/egitim', ders.egitim?.id, 'view']">{{ ders.egitim?.id }}</a>
+              <a [routerLink]="['/egitim', ders.egitim?.id, 'view']">{{ ders.egitim?.egitimBaslik }}</a>
             </div>
           </td>
           <td class="text-right">

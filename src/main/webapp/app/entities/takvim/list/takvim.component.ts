@@ -9,12 +9,21 @@ import { ITakvim } from '../takvim.model';
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/config/pagination.constants';
 import { TakvimService } from '../service/takvim.service';
 import { TakvimDeleteDialogComponent } from '../delete/takvim-delete-dialog.component';
+import { CalendarOptions } from '@fullcalendar/angular';
 
 @Component({
   selector: 'jhi-takvim',
   templateUrl: './takvim.component.html',
 })
 export class TakvimComponent implements OnInit {
+  calendarOptions: CalendarOptions = {
+    initialView: 'dayGridMonth',
+    events: [
+      { title: 'Yılbaşı 1', date: '2022-01-01' },
+      { title: 'java Dersi', date: '2021-12-26' },
+    ],
+  };
+
   takvims?: ITakvim[];
   isLoading = false;
   totalItems = 0;

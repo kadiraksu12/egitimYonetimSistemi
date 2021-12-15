@@ -5,7 +5,7 @@
         "title": "Egitimler",
         "refreshListLabel": "Listeyi Yenile",
         "createLabel": "Egitim Ekle",
-        "createOrEditLabel": "Create or edit a Egitim",
+        "createOrEditLabel": "Egitim Düzenle / Ekle",
         "notFound": " Egitim Bulunamadı"
       },
       "created": "A new Egitim is created with identifier {{ param }}",

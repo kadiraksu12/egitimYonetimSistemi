@@ -86,18 +86,6 @@
         </div>
 
         <div class="form-group">
-          <label class="form-control-label" jhiTranslate="egitimkadirApp.egitim.dersSayisi" for="field_dersSayisi">Ders Sayisi</label>
-          <input
-            type="number"
-            class="form-control"
-            name="dersSayisi"
-            id="field_dersSayisi"
-            data-cy="dersSayisi"
-            formControlName="dersSayisi"
-          />
-        </div>
-
-        <div class="form-group">
           <label class="form-control-label" jhiTranslate="egitimkadirApp.egitim.egitimSuresi" for="field_egitimSuresi">Egitim Suresi</label>
           <input
             type="number"
@@ -118,18 +106,6 @@
             id="field_egitimYeri"
             data-cy="egitimYeri"
             formControlName="egitimYeri"
-          />
-        </div>
-
-        <div class="form-group">
-          <label class="form-control-label" jhiTranslate="egitimkadirApp.egitim.egitimPuani" for="field_egitimPuani">Egitim Puani</label>
-          <input
-            type="number"
-            class="form-control"
-            name="egitimPuani"
-            id="field_egitimPuani"
-            data-cy="egitimPuani"
-            formControlName="egitimPuani"
           />
         </div>
 
@@ -175,31 +151,6 @@
               *ngFor="let egitmenOption of egitmenSharedCollection; trackBy: trackEgitmenById"
             >
               {{ egitmenOption.adiSoyadi }}
-            </option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-control-label" jhiTranslate="egitimkadirApp.egitim.applicationUser" for="field_applicationUser"
-            >Application User</label
-          >
-          <select
-            class="form-control"
-            id="field_applicationUser"
-            data-cy="applicationUser"
-            name="applicationUser"
-            formControlName="applicationUser"
-          >
-            <option [ngValue]="null"></option>
-            <option
-              [ngValue]="
-                applicationUserOption.id === editForm.get('applicationUser')!.value?.id
-                  ? editForm.get('applicationUser')!.value
-                  : applicationUserOption
-              "
-              *ngFor="let applicationUserOption of applicationUsersSharedCollection; trackBy: trackApplicationUserById"
-            >
-              {{ applicationUserOption.id }}
             </option>
           </select>
         </div>

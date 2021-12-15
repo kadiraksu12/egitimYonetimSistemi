@@ -1,4 +1,7 @@
-<div>
+<div *jhiHasAnyAuthority="'ROLE_USER'">
+  <full-calendar [options]="calendarOptions"></full-calendar>
+</div>
+<div *jhiHasAnyAuthority="'ROLE_ADMIN'">
   <h2 id="page-heading" data-cy="TakvimHeading">
     <span jhiTranslate="egitimkadirApp.takvim.home.title">Takvims</span>
 

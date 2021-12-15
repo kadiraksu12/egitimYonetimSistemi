@@ -10,5 +10,6 @@ import { DuyuruRoutingModule } from './route/duyuru-routing.module';
   imports: [SharedModule, DuyuruRoutingModule],
   declarations: [DuyuruComponent, DuyuruDetailComponent, DuyuruUpdateComponent, DuyuruDeleteDialogComponent],
   entryComponents: [DuyuruDeleteDialogComponent],
+  exports: [DuyuruComponent],
 })
 export class DuyuruModule {}

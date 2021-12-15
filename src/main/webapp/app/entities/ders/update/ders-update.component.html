@@ -29,52 +29,6 @@
         </div>
 
         <div class="form-group">
-          <label class="form-control-label" jhiTranslate="egitimkadirApp.ders.dersVideosu" for="field_dersVideosu">Ders Videosu</label>
-          <div>
-            <div *ngIf="editForm.get('dersVideosu')!.value" class="form-text text-danger clearfix">
-              <a
-                class="pull-left"
-                (click)="openFile(editForm.get('dersVideosu')!.value, editForm.get('dersVideosuContentType')!.value)"
-                jhiTranslate="entity.action.open"
-                >open</a
-              ><br />
-              <span class="pull-left"
-                >{{ editForm.get('dersVideosuContentType')!.value }}, {{ byteSize(editForm.get('dersVideosu')!.value) }}</span
-              >
-              <button
-                type="button"
-                (click)="editForm.patchValue({ dersVideosu: null }); editForm.patchValue({ dersVideosuContentType: null })"
-                class="btn btn-secondary btn-xs pull-right"
-              >
-                <fa-icon icon="times"></fa-icon>
-              </button>
-            </div>
-            <input
-              type="file"
-              id="file_dersVideosu"
-              data-cy="dersVideosu"
-              (change)="setFileData($event, 'dersVideosu', false)"
-              jhiTranslate="entity.action.addblob"
-            />
-          </div>
-          <input
-            type="hidden"
-            class="form-control"
-            name="dersVideosu"
-            id="field_dersVideosu"
-            data-cy="dersVideosu"
-            formControlName="dersVideosu"
-          />
-          <input
-            type="hidden"
-            class="form-control"
-            name="dersVideosuContentType"
-            id="field_dersVideosuContentType"
-            formControlName="dersVideosuContentType"
-          />
-        </div>
-
-        <div class="form-group">
           <label class="form-control-label" jhiTranslate="egitimkadirApp.ders.egitim" for="field_egitim">Egitim</label>
           <select class="form-control" id="field_egitim" data-cy="egitim" name="egitim" formControlName="egitim">
             <option [ngValue]="null"></option>
@@ -82,7 +36,7 @@
               [ngValue]="egitimOption.id === editForm.get('egitim')!.value?.id ? editForm.get('egitim')!.value : egitimOption"
               *ngFor="let egitimOption of egitimsSharedCollection; trackBy: trackEgitimById"
             >
-              {{ egitimOption.id }}
+              {{ egitimOption.egitimBaslik }}
             </option>
           </select>
         </div>
