@@ -53,7 +53,6 @@ public class Egitim implements Serializable {
     private Boolean aktif;
 
     @OneToMany(mappedBy = "egitim", fetch = FetchType.EAGER)
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "egitim" }, allowSetters = true)
     private Set<Ders> ders = new HashSet<>();
 

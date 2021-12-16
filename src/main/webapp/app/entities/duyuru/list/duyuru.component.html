@@ -1,4 +1,4 @@
-<div>
+<div *jhiHasAnyAuthority="'ROLE_ADMIN'">
   <h2 id="page-heading" data-cy="DuyuruHeading">
     <span jhiTranslate="egitimkadirApp.duyuru.home.title">Duyurus</span>
 
@@ -103,6 +103,18 @@
         [boundaryLinks]="true"
         (pageChange)="loadPage($event)"
       ></ngb-pagination>
+    </div>
+  </div>
+</div>
+<div *jhiHasAnyAuthority="'ROLE_USER'">
+  <div *ngFor="let item of duyurus; index as ind" class="card m-3" style="width: 300px; background-color: lightpink">
+    <div class="card-body">
+      <h5 class="card-title">
+        <b>{{ item.duyuruBaslik }} </b>
+      </h5>
+      <p class="card-text">
+        <b> {{ item.duyuruIcerik }}</b>
+      </p>
     </div>
   </div>
 </div>
